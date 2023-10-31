@@ -10,6 +10,7 @@ public class PlayerCharacterInput : MonoBehaviour
     public Vector2 look;
     public bool jump;
     public bool sprint;
+    public GameObject panel;
 
     [Header("Movement Settings")]
     public bool analogMovement;
@@ -41,6 +42,16 @@ public class PlayerCharacterInput : MonoBehaviour
         SprintInput(value.isPressed);
     }
 
+    public void OnOpen(InputValue value)
+    {
+        panel.SetActive(!panel.activeSelf);
+    }
+
+    public void OnClose(InputValue value)
+    {
+        panel.SetActive(false);
+    }
+
     public void MoveInput(Vector2 newMoveDirection)
     {
         move = newMoveDirection;
@@ -60,6 +71,8 @@ public class PlayerCharacterInput : MonoBehaviour
     {
         sprint = newSprintState;
     }
+
+
 
     private void OnApplicationFocus(bool hasFocus)
     {
