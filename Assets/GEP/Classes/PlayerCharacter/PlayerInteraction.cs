@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public GameObject panel;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +23,6 @@ public class PlayerInteraction : MonoBehaviour
         if (pickupable != null)
         {
             pickupable.Pickup();
-            panel.SetActive(true);
         }
     }
 }
