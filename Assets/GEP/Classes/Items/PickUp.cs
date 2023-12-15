@@ -19,13 +19,16 @@ public class PickUp : MonoBehaviour
         {
             for (int i = 0; i < inventory.slots.Length; i++)
             {
-                if (inventory.isFull[i] == true && inventory.slots[i].transform.GetComponent<ItemSlot>().amount > 2)
+                if (inventory.isFull[i] == true)
                 {
-                    if (itemName == inventory.slots[i].transform.GetComponent<Spawn>().itemName)
+                    if (inventory.slots[i].transform.GetComponent<ItemSlot>().amount < 2)
                     {
-                        Destroy(gameObject);
-                        inventory.slots[i].GetComponent<ItemSlot>().amount += 1;
-                        break;
+                        if (itemName == inventory.slots[i].transform.GetComponentInChildren<Spawn>().itemName)
+                        {
+                            Destroy(gameObject);
+                            inventory.slots[i].GetComponent<ItemSlot>().amount += 1;
+                            break;
+                        }
                     }
                 }
                 else if (inventory.isFull[i] == false)
@@ -33,6 +36,7 @@ public class PickUp : MonoBehaviour
                     inventory.isFull[i] = true;
                     Instantiate(itemButton, inventory.slots[i].transform, false);
                     inventory.slots[i].GetComponent<ItemSlot>().amount += 1;
+                    inventory.slots[i].GetComponent<ItemSlot>().item_name = itemName;
                     Destroy(gameObject);
                     break;
                 }

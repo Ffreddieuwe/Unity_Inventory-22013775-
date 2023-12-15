@@ -118,3 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6378829e92e5430408054fc86f75f537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemButton: {fileID: 3226902831251317962, guid: 702399d6616aabc48b203ef248a8bcb0,
+    type: 3}
+  itemName: BlueCube

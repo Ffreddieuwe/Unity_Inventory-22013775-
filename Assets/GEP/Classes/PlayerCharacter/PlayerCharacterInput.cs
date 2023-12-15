@@ -76,11 +76,11 @@ public class PlayerCharacterInput : MonoBehaviour
 
     private void OnApplicationFocus(bool hasFocus)
     {
-        SetCursorState(cursorLocked);
+        //SetCursorState(cursorLocked);
     }
 
     private void SetCursorState(bool newState)
     {
-        Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+        //Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
     }
 }
