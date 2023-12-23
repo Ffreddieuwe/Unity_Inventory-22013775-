@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 public class PlayerCharacterInput : MonoBehaviour
 {
     [Header("Character Input Values")]
+
+    public GameObject inventory;
+
     public Vector2 move;
     public Vector2 look;
     public bool jump;
@@ -18,6 +21,18 @@ public class PlayerCharacterInput : MonoBehaviour
     [Header("Mouse Cursor Settings")]
     public bool cursorLocked = true;
     public bool cursorInputForLook = true;
+
+    void Update()
+    {
+        if (inventory.activeSelf)
+        {
+            SetCursorState(false);
+        }
+        else
+        {
+            SetCursorState(true);
+        }
+    }
 
     public void OnMove(InputValue value)
     {
@@ -76,11 +91,11 @@ public class PlayerCharacterInput : MonoBehaviour
 
     private void OnApplicationFocus(bool hasFocus)
     {
-        //SetCursorState(cursorLocked);
+        SetCursorState(cursorLocked);
     }
 
     private void SetCursorState(bool newState)
     {
-        //Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
     }
 }

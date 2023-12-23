@@ -12,6 +12,10 @@ public class ItemSlot : MonoBehaviour
     public TextMeshProUGUI nameText;
     public string item_name;
 
+    public string description;
+    public TextMeshProUGUI descriptionText;
+    public GameObject descriptionPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,5 +65,22 @@ public class ItemSlot : MonoBehaviour
                 GameObject.Destroy(transform.GetComponentInChildren<Spawn>().gameObject);
             }
         }
+    }
+
+    public void DisplayDescription()
+    {
+        if (amount > 0)
+        {
+            descriptionPanel.SetActive(true);
+            //descriptionText.enabled = true;
+            descriptionText.text = description.ToString();
+        }
+    }
+
+    public void RemoveDescription()
+    {
+        descriptionPanel.SetActive(false);
+        //descriptionText.enabled = false;
+        descriptionText.text = "".ToString();
     }
 }

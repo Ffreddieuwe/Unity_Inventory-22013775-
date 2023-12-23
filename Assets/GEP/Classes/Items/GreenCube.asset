@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae9b90f6f4cc3a46a7242dfd9e8773c, type: 3}
+  m_Name: GreenCube
+  m_EditorClassIdentifier: 
+  item_name: GreenCube
+  description: If you imagine hard enough this could be grass.
+  item_button: {fileID: 3231969582701894383, guid: 5780b5336fad22e4eb44037b23195b5b,
+    type: 3}
+  item_material: {fileID: 2100000, guid: b7bf2ecfb46ac954b811f08323815e83, type: 2}

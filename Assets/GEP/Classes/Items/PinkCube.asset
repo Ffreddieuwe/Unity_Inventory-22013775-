@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae9b90f6f4cc3a46a7242dfd9e8773c, type: 3}
+  m_Name: PinkCube
+  m_EditorClassIdentifier: 
+  item_name: PinkCube
+  description: This ones Pink!
+  item_button: {fileID: 3226902831251317962, guid: 087d89eadba5af644beaa3cce6aa229e,
+    type: 3}
+  item_material: {fileID: 2100000, guid: cb0ef5fc16152df4089e19392889b31e, type: 2}

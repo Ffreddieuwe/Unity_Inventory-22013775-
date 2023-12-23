@@ -2,20 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUp : MonoBehaviour
+public class NewPickUp : MonoBehaviour
 {
     private Inventory inventory;
-    public GameObject itemButton;
-    public string itemName;
+    private GameObject itemButton;
+    private string itemName;
+
+    public Cube cube;
 
     private void Start()
     {
         inventory = FindObjectOfType<Inventory>();
+
+        itemName = cube.item_name;
+        itemButton = cube.item_button;
+
+        GetComponent<Renderer>().material = cube.item_material;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             for (int i = 0; i < inventory.slots.Length; i++)
             {
@@ -37,6 +44,7 @@ public class PickUp : MonoBehaviour
                     Instantiate(itemButton, inventory.slots[i].transform, false);
                     inventory.slots[i].GetComponent<ItemSlot>().amount += 1;
                     inventory.slots[i].GetComponent<ItemSlot>().item_name = itemName;
+                    inventory.slots[i].GetComponent<ItemSlot>().description = cube.description;
                     Destroy(gameObject);
                     break;
                 }
