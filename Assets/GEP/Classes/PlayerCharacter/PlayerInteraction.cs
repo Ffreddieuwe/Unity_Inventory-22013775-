@@ -20,10 +20,6 @@ public class PlayerInteraction : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        IPickupable pickupable = collision.gameObject.GetComponent<IPickupable>();
-        if (pickupable != null)
-        {
-            pickupable.Pickup();
-        }
+
     }
 }
